@@ -31,7 +31,7 @@ export default async function handler(req: any, res: any) {
     }
 
     const result = await sendEnquiryEmails(payload);
-    res.status(200).json({ success: true, ...result });
+    res.status(200).json({ ...result });
   } catch (error: any) {
     console.error('Serverless Error in /api/send-enquiry:', error);
     res.status(400).json({
